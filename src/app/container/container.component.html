@@ -1,5 +1,5 @@
 <div class="ekart--product--container">
-    <!-- <img [src]="product.pImage" alt="">
+  <!-- <img [src]="product.pImage" alt="">
     <p>Name: {{product.name}}</p>
     <p>Price: {{'$'+ product.price}}</p>
     <p>Color: {{product.color}}</p>
@@ -11,5 +11,6 @@
     <input (input)="onNameChange($event)"><br>
     <p>name={{name}}</p> -->
 
-    <app-search></app-search>
+  <app-search (searchTextChanged)="onSearchTextChanged($event)"></app-search>
+  <product-list [searchText]="searchText"></product-list>
 </div>
