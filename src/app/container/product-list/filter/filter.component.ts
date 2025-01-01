@@ -10,7 +10,7 @@ export class FilterComponent implements OnInit {
   @Input() inStock: number = 0;
   @Input() outOfStock: number = 0;
 
-  selectedFilterRadioButton = 'false';
+  selectedFilterRadioButton = 'all';
 
   @Output()
   selectedFilterRadioButtonChanged: EventEmitter<string> =

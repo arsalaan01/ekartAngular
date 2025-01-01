@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Product } from 'src/app/model/product';
 
 @Component({
   selector: 'product-list',
@@ -6,6 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent implements OnInit {
+  selectedProduct: Product;
+
   products = [
     {
       id: 1,
@@ -600,8 +603,10 @@ export class ProductListComponent implements OnInit {
   ];
 
   totalProductCount = this.products.length;
+
   totalInStock = this.products.filter((product) => product.is_in_inventory)
     .length;
+
   totalOutOfStock = this.products.filter(
     (product) => product.is_in_inventory === false
   ).length;
